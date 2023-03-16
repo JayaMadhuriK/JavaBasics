@@ -38,14 +38,13 @@ class Phone{
     }
 
     public static void main(String args[]){
-        Phone obj = new Phone();
-        Camera obj1 = new SmartPhone();
-        MusicPlayer obj2 = new SmartPhone();
+        SmartPhone obj1 = new SmartPhone();
+        
             obj1.click();
             obj1.record();
-            obj2.play();
-            obj2.stop();
-            obj.call();
-            obj.sms();
+            obj1.play();
+            obj1.stop();
+            obj1.call();
+            obj1.sms();
     }
 }
