@@ -18,7 +18,7 @@ class Employee{
                 file.createNewFile();
             }
             FileOutputStream fos = new FileOutputStream(file,true);
-                String str =" "+emp_id+" "+emp_name+" "+salary+" "+addr+"\n";
+               String str =emp_id+" "+emp_name+" "+salary+" "+addr+"\n";
                 fos.write(str.getBytes());
                 fos.flush();
                 fos.close();
@@ -29,8 +29,8 @@ class Employee{
         }
         System.out.println("record inserted");
     }
-    public void display(){
-       
+    public static String display(){
+                String filecontent = "";
                 FileInputStream f1;
                 try {
                         f1 = new FileInputStream("C:/Users/madhu/OneDrive/Desktop/NucleusTeq/week5/Employee.txt");
@@ -40,6 +40,7 @@ class Employee{
                         while(!(i ==-1)){
                         char c = (char)i;
                         System.out.print(c);
+                        filecontent = filecontent + c;
                         i = f1.read();
                         }
                 } 
@@ -51,10 +52,42 @@ class Employee{
                 catch (FileNotFoundException e) {
                         System.out.println("file not found");
                  }
+                 return filecontent;
                 
     }
-   
+    public static void removeRecord(File file, String empid) {
+                    String line ="";
+                    String empobj = "";
+                    String filecontent = display();
+                   
+                    try{
+
+                        Scanner sc1 = new Scanner(file);
+                        while(sc1.hasNextLine()){
+
+                                line = sc1.nextLine();
+                                if(line.startsWith(empid)){
+                                        empobj = empobj + line + "";
+                                } 
+                
+                        }
+                        
+                        FileOutputStream fos = new FileOutputStream(file);
+                        String finalcontent = filecontent.replace(empobj.trim(),"");
+                        fos.write(finalcontent.getBytes());
+                        fos.flush();
+                        fos.close();
+                        sc1.close();
+                        System.out.println("record "+ empobj + " deleted successfully");
+                    }
+                    catch(IOException ae){
+                    System.out.println(ae);
+                    }
+
+    }
+
 }
+
 class EmployeeTest extends Employee{
 	public static void main(String args[]){
         Employee e = new Employee();
@@ -81,10 +114,13 @@ class EmployeeTest extends Employee{
 
                     break;
             case 2:
-                    e.display();
+                    display();
                     break;
             case 3:
+                   
                     String line ="";
+                    
+
                     try{
                     FileInputStream  file = new FileInputStream("C:/Users/madhu/OneDrive/Desktop/NucleusTeq/week5/Employee.txt");
                     System.out.println("enter employee id");
@@ -94,9 +130,12 @@ class EmployeeTest extends Employee{
                         line = sc1.nextLine();
                         if(line.startsWith(emp_id)){
                                 System.out.println(line);
+                              
                         } 
-                       
+                        
+                        
                     }
+                   
                     sc1.close();
                     }
                     catch(IOException ae){
@@ -104,14 +143,11 @@ class EmployeeTest extends Employee{
                     }
                     break;
             case 4:
+                File file = new File("C:/Users/madhu/OneDrive/Desktop/NucleusTeq/week5/Employee.txt");
+                System.out.println("enter emp id to delete");
+                String emp_id = sc.next();
+                removeRecord(file,emp_id);
                 
-                File fo = new File("C:/Users/madhu/OneDrive/Desktop/NucleusTeq/week5/Employee.txt");
-                if(fo.delete()){
-                        System.out.println("file deleted");
-                }
-                else{
-                        System.out.println("error in deletion");
-                }
                    break;
             case 5:
                     System.exit(0);
@@ -123,4 +159,5 @@ class EmployeeTest extends Employee{
         sc.close();
     }
 
+       
 }
