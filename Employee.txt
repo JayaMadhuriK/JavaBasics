@@ -1,3 +1,0 @@
-s1 madhuri 12000.0 salur
-s2 jaswanth 13000.0 gudivada
-s3 jaya 15000.0 eluru
