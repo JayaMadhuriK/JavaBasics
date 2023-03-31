@@ -2,7 +2,7 @@ import java.util.*;
 
 class SumEven{
     public static void main(String args[]){
-        List<Integer> v = new ArrayList<>();
+        Vector<Integer> v = new Vector<>();
         int sum = 0;
        
         v.add(9);
@@ -15,6 +15,11 @@ class SumEven{
             }
            
         }
-        System.out.println("sum of even number in List: " + sum); 
+        System.out.println("elements in list: ");
+        Enumeration<Integer> e = v.elements();
+        while(e.hasMoreElements()){
+            System.out.println(e.nextElement());
+        }
+        System.out.println("sum of even elements: "+sum);
     }
 }
