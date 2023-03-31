@@ -11,18 +11,13 @@ class CommonList{
         v2.add(10);
         v2.add(50);
         v2.add(30);
+        v2.add(40);
        
         System.out.println(v1);
         System.out.println(v2);
-        for(int i = 0; i < v1.size(); i++){
-         
-            for(int j = 0;j<v2.size();j++){  
-           
-                if(v1.get(i).equals(v2.get(j))){
-                    
-                    v.add(v1.get(i));
-                    break;
-                }
+        for (int i = 0;i<v1.size();i++) {
+            if(v2.contains(v1.get(i))){
+                v.add(v1.get(i));
             }
         }
         System.out.println(v);
