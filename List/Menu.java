@@ -29,7 +29,8 @@ class Menu {
            
             break;
             case 3:
-                System.out.println(list);
+                System.out.println("Elements in the list: ");
+                list.forEach((n)->System.out.println(n));
                 break;
             case 4:System.out.println("Quiting...");
             System.exit(0);
