@@ -1,0 +1,44 @@
+
+body{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:linear-gradient(135deg, #71e6ab, #6d59b6);;
+}
+.container{
+  margin-top:5px;
+  border:1px solid;
+  background-color:aliceblue;
+  height: 420px;
+  width:450px;
+}
+.input-box{
+  display:flex;
+  display:inline-block;
+
+}
+p{
+  margin-left: 30px;
+}
+.title{
+  margin-left: 30px;
+}
+input{
+  margin-left:30px;
+}
+.button1{
+  margin-top:25px;
+  margin-left:25px;
+  width:400px;
+  height:30px;
+  background: #718ce6;
+} 
+.user-details{
+  margin-top:-10px;
+}
+.gender-details{
+  margin-top:20px;
+  position: relative;
+  
+}
