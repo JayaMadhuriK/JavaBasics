@@ -4,47 +4,47 @@
     <meta charset="UTF-8">
     <title>Registration Form</title>
     <link rel="stylesheet" href="Registration.css">
-    <script> </script>
+    <script src="Registration.js"></script>
    </head>
 <body>
   <div class="container">
     <div class="title"><h3>Registration</h3></div>
     <div class="content">
-      <form action="#">
+      <form name="form" method="post" required>
         <div class="user-details">
           <div class="input-box">
             <p class="details">Full Name</p>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" name="fname" class="input-box1" placeholder="Enter your name" required>
           </div>
           <div class="input-box">
             <p class="details">Username</p>
-            <input type="text" placeholder="Enter your username" required>
+            <input type="text" name="uname" class="input-box1" placeholder="Enter your username" required>
           </div>
           <div class="input-box">
             <p class="details">Email</p>
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" name="ename" class="input-box1" placeholder="Enter your email" required>
           </div>
           <div class="input-box">
             <p class="details">Phone Number</p>
-            <input type="number" placeholder="Enter your number" required>
+            <input type="number" name="pname" class="input-box1" placeholder="Enter your number" required>
           </div>
           <div class="input-box">
             <p class="details">Password</p>
-            <input type="password" placeholder="Enter your password" required>
+            <input type="password" name="pass" class="input-box1" placeholder="Enter your password" required>
           </div>
           <div class="input-box">
             <p class="details">Confirm Password</p>
-            <input type="password" placeholder="Confirm your password" required>
+            <input type="password" name="pass1" class="input-box1" placeholder="Confirm your password" required>
           </div>
         </div>
         <p class="gender-title">Gender</p>
         <div class="gender-details">
-          <input type="radio" name="gender" value="male">Male</input>
+          <input type="radio" name="gender" value="male" required>Male</input>
           <input type="radio" name="gender" value="female">Female</input>
           <input type="radio" name="gender" value="prefer not to say">Prefer not to say</input>
         </div> 
         <div class="button">
-          <input class="button1" type="submit" onClick="" value="Register">
+          <input class="button1" type="submit" onClick="validate()" value="Register">
         </div>
       </form>
     </div>
